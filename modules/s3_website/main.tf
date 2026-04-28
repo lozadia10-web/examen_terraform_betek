@@ -17,7 +17,7 @@ resource "aws_s3_bucket_website_configuration" "hosting" {
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.website.id
   key          = "index.html"
-  source       = "index.html" # Busca el archivo en la raiz de tu proyecto
+  source       = "${path.cwd}/index.html" # Busca el archivo de tu proyecto
   content_type = "text/html"  # Importante para que el navegador lo renderice como web
   tags         = var.tags
 }
