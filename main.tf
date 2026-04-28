@@ -2,7 +2,7 @@
 module "s3_website" {
   source      = "./modules/s3_website"
   bucket_name = var.bucket_name
-  
+
   # Mapa de tags obligatorios según el examen 
   tags = {
     Environment = "dev"
